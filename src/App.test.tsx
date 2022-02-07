@@ -18,9 +18,7 @@ test("entering player name and clicking add button should add new players", () =
 
 test("clicking add button should clear player name textbox", () => {
     render(<App />);
-    const nameTextbox = screen.getByLabelText(
-        "Player Name"
-    ) as HTMLInputElement;
+    const nameTextbox = screen.getByLabelText("Player Name") as HTMLInputElement;
     const playerName = "Player 1";
     userEvent.type(nameTextbox, playerName);
     const addButton = screen.getByRole("button", { name: /Add Player/i });
