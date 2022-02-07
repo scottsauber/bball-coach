@@ -8,7 +8,7 @@ test("entering player name and clicking add button should add new players", () =
 
     addPlayerFlow(playerName);
 
-    const playerOne = screen.getByText(playerName);
+    const playerOne = screen.getByText(playerName) as HTMLLIElement;
     expect(playerOne).toBeInTheDocument();
 });
 
@@ -23,9 +23,9 @@ test("clicking add button should clear player name textbox", () => {
 
 const addPlayerFlow = (playerName: string) => {
     render(<App />);
-    const nameTextbox = screen.getByLabelText("Player Name");
+    const nameTextbox = screen.getByLabelText("Player Name") as HTMLInputElement;
     userEvent.type(nameTextbox, playerName);
-    const addButton = screen.getByRole("button", { name: /Add Player/i });
+    const addButton = screen.getByRole("button", { name: /Add Player/i }) as HTMLButtonElement;
 
     userEvent.click(addButton);
 };
