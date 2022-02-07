@@ -8,6 +8,7 @@ function App() {
 
     const addPlayer = () => {
         setPlayers([...players, playerName]);
+        setPlayerName("");
     };
 
     const updatePlayer = (event: React.ChangeEvent<HTMLInputElement>) => {
